@@ -8,3 +8,9 @@ Esto puede solucionarse facilmente indicando un directorio temporal que ejerza d
 ```bash
 TMPDIR=/home/pablo/tmp_pip python -m pip download transformers evaluate numpy tensorboard wheel datasets tokenizers torch torchvision nvidia-ml-py einops accuracy "spacy<3.8" ms3 music21 tqdm pandas seaborn plotly matplotlib --extra-index-url https://download.pytorch.org/whl/cu126
 ```
+ ### Eliminar copias desactualizadas de paquetes snap
+ ```bash
+sudo snap list --all | awk '/desactivado/{print $1, $3}' | while read snapname revision; do
+  sudo snap remove "$snapname" --revision="$revision"
+done
+```
