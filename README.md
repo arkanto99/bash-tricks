@@ -19,3 +19,7 @@ done
 ```bash
 pip install torch --index-url https://download.pytorch.org/whl/cpu
 ```
+### Login Huggingface en terminal
+```
+hf auth login
+```
