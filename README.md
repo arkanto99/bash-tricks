@@ -14,3 +14,8 @@ sudo snap list --all | awk '/desactivado/{print $1, $3}' | while read snapname r
   sudo snap remove "$snapname" --revision="$revision"
 done
 ```
+### Instalar pytorch sin dependencias de CUDA (solo CPU)
+Útil para ejecutar scripts con dependencias de torch pero que no es necesario cargar en la GPU.
+```bash
+pip install torch --index-url https://download.pytorch.org/whl/cpu
+```
